@@ -1,7 +1,7 @@
 // AppRouter.jsx
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../Pages/HomePage";
+import HomePage from "../Pages/HomePage/";
 import AccessoriesPage from "../Pages/AccessoriesPage";
 import CartMenuPage from "../Pages/CartMenuPage";
 
