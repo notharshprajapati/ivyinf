@@ -28,7 +28,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-orange-500 p-4 relative">
+    <nav className="bg-orange-500 p-4 relative ">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-bold">
           IVY Infinity
@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className="md:hidden">
           {isMenuOpen ? (
             <FaTimes
-              className="text-white text-2xl cursor-pointer"
+              className="text-white text-2xl cursor-pointer "
               onClick={toggleMenu}
             />
           ) : (
@@ -60,11 +60,11 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-orange-500 text-white transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full h-full bg-orange-500 text-white transition-all duration-300  ${
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="container mx-auto p-8">
+        <div className="container mx-auto p-8 md:hidden">
           <Link to="/" className="text-white block mb-4" onClick={closeMenu}>
             Home
           </Link>
