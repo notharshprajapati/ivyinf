@@ -28,9 +28,9 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-orange-500 p-4 relative ">
+    <nav className="backdrop-blur-sm bg-white/10 p-4 sticky top-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-2xl font-bold">
+        <Link to="/" className="text-white text-2xl font-extrabold">
           IVY Infinity
         </Link>
         <div className="hidden md:flex space-x-4">
@@ -60,7 +60,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-orange-500 text-white transition-all duration-300  ${
+        className={`fixed top-0 left-0 w-full h-full bg-neutral-900 text-white transition-all duration-300  ${
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

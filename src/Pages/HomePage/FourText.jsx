@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-const ScrollTextSection = () => {
+const FourText = () => {
   const texts = [
-    "First Row Text",
-    "Second Row Text",
-    "Third Row Text",
-    "Fourth Row Text",
+    "Rip through the sky",
+    "with complete control",
+    "Go into the beyond",
+    "and redefine flying",
   ];
   const [opacities, setOpacities] = useState([0, 0, 0, 0]);
 
@@ -23,11 +23,7 @@ const ScrollTextSection = () => {
 
           // Calculate opacity based on the distance from the row center to the scroll center
           const distance = Math.abs(rowCenter - scrollCenter);
-          const delayFactor = 0.5; // Adjust the delay factor as needed
-          const opacity = Math.min(
-            Math.max(distance / windowHeight - delayFactor, 0),
-            1
-          );
+          const opacity = Math.min(Math.max(distance / windowHeight, 0), 1);
 
           return opacity;
         }
@@ -47,7 +43,7 @@ const ScrollTextSection = () => {
   }, [opacities]);
 
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center text-black">
+    <div className="h-screen w-full flex flex-col items-center justify-center ">
       {opacities.map((opacity, index) => (
         <div
           key={index}
@@ -62,4 +58,4 @@ const ScrollTextSection = () => {
   );
 };
 
-export default ScrollTextSection;
+export default FourText;

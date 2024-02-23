@@ -9,27 +9,25 @@ import {
 } from "react-icons/fa";
 
 const IconBox = ({ icon, subheading }) => (
-  <div className="flex flex-col items-center justify-center p-4 bg-gray-200">
-    <div className="h-60 self-stretch flex flex-col items-start overflow-hidden">
-      <div className="w-60 h-60 flex items-center justify-center overflow-hidden">
-        {icon}
-      </div>
-      <div className="flex flex-col items-start self-stretch p-0.5">
-        <h4 className="text-lg font-semibold">{subheading}</h4>
-      </div>
+  <div className="py-4 flex flex-col items-start justify-center border-b-2 ">
+    <div className="flex items-center justify-center overflow-hidden pb-5 text-red-600">
+      {icon}
+    </div>
+    <div className="flex flex-col items-start pb-5">
+      <h4 className="text-4xl font-semibold ">{subheading}</h4>
     </div>
   </div>
 );
 
 const IconGrid = () => (
-  <div className="px-80 m-40 bg-red-100">
+  <div className="h-screen w-screen flex items-center justify-center ">
     <div className="grid grid-cols-3 gap-4">
-      <IconBox icon={<FaApple size={80} />} subheading="iOS" />
-      <IconBox icon={<FaAndroid size={80} />} subheading="Android" />
-      <IconBox icon={<FaWindows size={80} />} subheading="Windows" />
-      <IconBox icon={<FaLinux size={80} />} subheading="Linux" />
-      <IconBox icon={<FaChrome size={80} />} subheading="Chrome" />
-      <IconBox icon={<FaFirefox size={80} />} subheading="Firefox" />
+      <IconBox icon={<FaApple size={80} />} subheading=" iOS iOS iOS  " />
+      <IconBox icon={<FaAndroid size={80} />} subheading="  Android Android " />
+      <IconBox icon={<FaWindows size={80} />} subheading=" Windows Windows " />
+      <IconBox icon={<FaLinux size={80} />} subheading=" Linux Linux Linux " />
+      <IconBox icon={<FaChrome size={80} />} subheading=" Chrome Chrome  " />
+      <IconBox icon={<FaFirefox size={80} />} subheading="Firefox Firefox  " />
     </div>
   </div>
 );

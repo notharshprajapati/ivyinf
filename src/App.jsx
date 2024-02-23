@@ -9,7 +9,9 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <AppRouter />
+      <div className="bg-black text-white overflow-x-hidden">
+        <AppRouter />
+      </div>
       <Footer />
     </Router>
   );
