@@ -5,7 +5,6 @@ const CartMenuPage = () => {
   return (
     <div>
       <h2>Cart Menu Page</h2>
-      {/* Add content for your cart menu page */}
     </div>
   );
 };
