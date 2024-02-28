@@ -1,0 +1,39 @@
+import React from "react";
+
+const OneSkew = () => {
+  return (
+    <div className="flex h-screen w-full mb-20">
+      <div className="w-1/2 h-full order-1 flex items-center justify-center mt-[100px] -z-10">
+        <video
+          autoPlay
+          muted
+          loop
+          className="w-300 h-auto object-cover transform  -mr-[300px] -skew-y-[8deg]"
+        >
+          <source
+            src="https://dji-official-fe.djicdn.com/reactor/assets/_next/static/videos/7da6f970-0934-46e1-ab3d-e0ca3211971f.webm"
+            type="video/webm"
+          />
+        </video>
+        <img
+          src="https://store-guides2.djicdn.com/guides/wp-content/uploads/2017/10/Spark-with-remote-controller-feature-picture-696x340.jpg"
+          className="w-[32rem] h-auto object-cover  mt-[400px] -mr-[400px] -skew-y-[8deg] "
+        />
+      </div>
+
+      <div
+        className={`w-1/2 h-full flex items-center justify-center  order-2 `}
+      >
+        <h2 className={`w-5/12 text-2xl text-justify mr-80   `}>
+          <span className="text-red-700 font-bold">
+            DJI FPV stands out in more ways than one.
+          </span>
+          Sporting front LEDs and aircraft arm lights with customizable-color,
+          DJI FPV allows pilots to make their aircraft as unique as they are
+        </h2>
+      </div>
+    </div>
+  );
+};
+
+export default OneSkew;

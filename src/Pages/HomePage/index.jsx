@@ -1,12 +1,15 @@
 import React from "react";
-import Hero from "./Hero";
-import FourText from "./FourText";
-import RotatingImage from "./RotatingImage";
-import CenterFadeText from "./CenterFadeText";
-import IconGrid from "./IconGrid";
-import LoopText from "./LoopText";
-import StaticImage from "./StaticImage";
-import HeroAnimation from "./HeroAnimation";
+import Hero from "./Middle/Hero";
+import FourText from "./Middle/FourText";
+import RotatingImage from "./Middle/RotatingImage";
+import CenterFadeText from "./Middle/CenterFadeText";
+import IconGrid from "./Middle/IconGrid";
+import LoopText from "./Middle/LoopText";
+import StaticImage from "./Middle/StaticImage";
+import HeroAnimation from "./Middle/HeroAnimation";
+import Zoomout from "./Zoomout";
+import Replacement from "./Replacement";
+import SkewImage from "./Middle/SkewImage";
 
 const Index = () => {
   return (
@@ -57,7 +60,7 @@ const Index = () => {
           <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10">
             <span className="text-red-700 font-bold">
               Next-Level Immersion.
-            </span>{" "}
+            </span>
             Unparalleled Control.
           </h1>
           <p className="w-1/2 text-center text-xl mx-auto">
@@ -68,6 +71,11 @@ const Index = () => {
           </p>
         </div>
         <HeroAnimation />
+        <div className="bg-black-200 p-10 h-screen w-screen z-10"> </div>
+        <Zoomout />
+        <SkewImage />
+        <Replacement />
+        <div className="h-screen w-screen bg-red-100 z-20"> sus</div>
       </div>
     </div>
   );

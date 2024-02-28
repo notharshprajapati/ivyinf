@@ -28,7 +28,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="backdrop-blur-sm bg-white/10 p-4 sticky top-0 z-20">
+    <nav className="backdrop-blur-sm bg-white/10 p-4 fixed top-0 w-screen z-20">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-extrabold">
           IVY Infinity

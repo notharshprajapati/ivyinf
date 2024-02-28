@@ -9,3 +9,17 @@
 canvas {
   display: inline;
 }
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 2rem;
+}

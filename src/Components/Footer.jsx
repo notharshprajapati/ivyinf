@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900 text-white py-4 relative z-20 ">
+    <footer className="bg-neutral-900 text-white py-4 w-screen relative z-10 ">
       <div className="container mx-auto flex flex-wrap justify-center sm:justify-between">
         <div className="w-full sm:w-1/2 md:w-1/4 text-center sm:text-left mb-4 sm:mb-0">
           <h2 className="text-lg font-bold mb-2">Navigation</h2>
