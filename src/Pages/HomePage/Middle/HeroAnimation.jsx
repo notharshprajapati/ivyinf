@@ -59,12 +59,12 @@ const HeroAnimation = () => {
   }, []);
 
   return (
-    <div ref={noRef} className={"bg-black w-full z-20"}>
-      <div className="flex items-center justify-center h-screen sticky top-10 z-10 ">
-        {number}
-        <img src={src} className="w-3/8 h-auto" />
+    <div ref={noRef} className=" w-full z-20">
+      <div className="flex items-center justify-center h-screen sticky top-10 z-10  ">
+        <img src={src} className="w-3/8 h-auto " />
       </div>
       <div className=" h-screen"></div>
+      <div className="fixed bottom-0 z-50 text-white"> {number}</div>
     </div>
   );
 };

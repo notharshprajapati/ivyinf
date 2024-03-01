@@ -1,14 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 
-const Sus = ({ scrollHeight, numFrames, width, height, location }) => {
+const ImgSeq = ({ scrollHeight, numFrames, width, height, location }) => {
   const canvasRef = useRef(null);
   const [images, setImages] = useState([]);
   const [frameIndex, setFrameIndex] = useState(0);
-  const [log, setLog] = useState(0);
 
   // Step 1: Load images
   function getCurrentFrame(index) {
-    return `./img/${location}${index.toString().padStart(4, "0")}.jpg`;
+    return `./img/${location}${index.toString().padStart(4, "0")}.png`;
   }
   function preloadImages() {
     for (let i = 1; i <= numFrames; i++) {
@@ -22,16 +21,16 @@ const Sus = ({ scrollHeight, numFrames, width, height, location }) => {
   // Step 2: Handle scroll events
   const handleScroll = () => {
     const scrollFraction = window.scrollY / (scrollHeight - window.innerHeight);
-    const index = Math.ceil(scrollFraction * numFrames) - 2 * numFrames + 10;
+    const index = Math.min(
+      numFrames - 1,
+      Math.ceil(scrollFraction * numFrames)
+    );
 
-    setLog(index);
-    if (index < 0) {
-      setFrameIndex(0);
-    } else if (index >= numFrames) {
-      setFrameIndex(numFrames - 1);
-    } else {
-      setFrameIndex(index);
+    if (index <= 0 || index > numFrames) {
+      return;
     }
+
+    setFrameIndex(index);
   };
 
   // Step 3: Set up canvas
@@ -66,10 +65,44 @@ const Sus = ({ scrollHeight, numFrames, width, height, location }) => {
   }, [frameIndex, images]);
   return (
     <div style={{ height: scrollHeight }}>
-      <canvas ref={canvasRef} />
-      <div className="fixed top-0">{log}</div>
+      <canvas className="fixed top-0" ref={canvasRef} />
     </div>
   );
 };
 
-export default Sus;
+export default ImgSeq;
+
+// <div className="bg-black ">
+//   <Sus
+//     scrollHeight={1920}
+//     // width={1920}
+//     // height={1080}
+//     // numFrames={120}
+//     // location={"Drone/One/one"}
+
+//     // width={1920}
+//     // height={1080}
+//     // numFrames={108}
+//     // location={"Drone/Two/Two"}
+
+//     //     // width={1080}
+//     //     // height={1080}
+//     //     // numFrames={57}
+//     //     // location={"Drone/Three/Three"}
+
+//     //     // width={1080}
+//     //     // height={1080}
+//     //     // numFrames={120}
+//     //     // location={"Drone/Four/Four"}
+
+//     //     // width={1000}
+//     //     // height={500}
+//     //     // numFrames={180}
+//     //     // location={"Goggle/one/one"}
+
+//     //     width={1000}
+//     //     height={500}
+//     //     numFrames={120}
+//     //     location={"Goggle/two/two"}
+//   />
+// </div>

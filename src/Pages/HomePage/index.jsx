@@ -15,14 +15,11 @@ const Index = () => {
   return (
     <div className="relative">
       <video
-        className="fixed top-0 left-0 w-full h-full object-cover z-0"
+        className="fixed top-0 left-0 w-full h-full object-cover z-0 "
         autoPlay
         muted
       >
-        <source
-          src="https://dji-official-fe.djicdn.com/reactor/assets/_next/static/videos/1d5f5409-1b3f-421d-be8c-bfc982196d24.webm"
-          type="video/webm"
-        />
+        <source src="./vid/DroneHero.mp4" type="video/webm" />
       </video>
       <div>
         <Hero className="relative z-10" />
