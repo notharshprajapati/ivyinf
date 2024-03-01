@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import SeqVid from "./SeqVid";
 import Sus from "./Sus";
+import Hero from "./Hero";
 
 const Sequence = () => {
   const firstVideoRef = useRef(null);
@@ -59,18 +60,20 @@ const Sequence = () => {
   }, []); // Empty dependency array to run the effect only once on mount
 
   return (
-    <div className="text-white font-bold ">
+    <div className="text-white  ">
       <div
         ref={firstVideoRef}
-        className="z-10 sticky top-0 w-full h-screen text-6xl text-white font-bold"
+        className="z-10 sticky top-0 w-full h-screen text-6xl text-white bg-white"
       >
         <SeqVid numFrames={108} location={"Hero/Image"} />
+        <div className="absolute top-0 left-0 w-full h-screen z-20 flex items-center justify-center">
+          <Hero />
+        </div>
       </div>
-      <div className="relative z-20 w-full h-screen text-6xl">1st</div>
 
       <div
         ref={secondVideoRef}
-        className="z-10 sticky top-0  w-full h-screen text-6xl text-white font-bold opacity-0 transition-opacity duration-500"
+        className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity1 }}
       >
         {/* <SeqVid numFrames={37} location={"LinesVideo/LV"} /> */}
@@ -86,7 +89,7 @@ const Sequence = () => {
       <div className="relative z-20 w-full h-screen text-6xl">2nd</div>
       <div
         ref={thirdVideoRef}
-        className="z-10 sticky top-0  w-full h-screen text-6xl text-white font-bold opacity-0 transition-opacity duration-500"
+        className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity2 }}
       >
         <video autoPlay muted>
