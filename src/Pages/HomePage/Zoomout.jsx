@@ -34,12 +34,11 @@ const Zoomout = () => {
 
   return (
     <div className="h-auto bg-red-400 relative z-0">
-      <h1 className="fixed bottom-0 z-10">{scale}</h1>
       <img
         ref={noRef}
         style={{ transform: `scale(${scale})` }}
         className="-z-10"
-        src="https://dji-official-fe.djicdn.com/dps/4eafd11dcad48d98e4643343dff28617.jpg"
+        src="./img/nature.png"
         alt=""
       />
     </div>

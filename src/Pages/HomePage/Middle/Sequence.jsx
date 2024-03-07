@@ -2,8 +2,18 @@ import React, { useRef, useEffect, useState } from "react";
 import SeqVid from "./SeqVid";
 import Sus from "./Sus";
 import Hero from "./Hero";
+import FourText from "./FourText";
+import RotatingImage from "./RotatingImage";
+import CenterFadeText from "./CenterFadeText";
+import { ScrollContainer } from "react-scroll-motion";
 
 const Sequence = () => {
+  const sentences = [
+    "Rip through the sky",
+    "with complete control",
+    "Go into the beyond",
+    "and redefine flying",
+  ];
   const firstVideoRef = useRef(null);
   const secondVideoRef = useRef(null);
   const thirdVideoRef = useRef(null);
@@ -32,9 +42,6 @@ const Sequence = () => {
         if (entry.isIntersecting) {
           // If the element is in view, set opacity to 1
           setOpacity2(1);
-        } else {
-          // If the element is out of view, set opacity to 0
-          setOpacity2(0);
         }
       });
     };
@@ -86,17 +93,52 @@ const Sequence = () => {
           format={"jpg"}
         />
       </div>
-      <div className="relative z-20 w-full h-screen text-6xl">2nd</div>
+      <div className="relative z-20  ">
+        <div className="bg-black bg-opacity-90 ">
+          <FourText
+            className="relative z-10  "
+            sentences={sentences}
+            heightNumber={250}
+          />
+          <div className="h-40"> </div>
+          <RotatingImage
+            isImageLeft={false}
+            text="Inf Drone"
+            imageSrc="./img/rotDrone.png"
+          />
+          <RotatingImage
+            isImageLeft={true}
+            text="Googles"
+            imageSrc="./img/rotGoggle.png"
+          />
+          <RotatingImage
+            isImageLeft={false}
+            text="Controller"
+            imageSrc="./img/rotCont.png"
+          />
+          <RotatingImage
+            isImageLeft={true}
+            text="Frame"
+            imageSrc="./img/rotFrame.png"
+          />
+        </div>
+      </div>
+
       <div
         ref={thirdVideoRef}
         className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity2 }}
       >
-        <video autoPlay muted>
-          <source src="./vid/newVid.mp4" type="video/mp4" />
+        <video autoPlay muted loop>
+          <source src="./vid/3rdvid.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="relative z-20 w-full h-screen text-6xl">3rd</div>
+      <div className="relative z-20 w-full text-4xl h-full">
+        <ScrollContainer className="z-30 text-white ">
+          <CenterFadeText text="Fly through the sky in ways that seem impossible." />
+          <CenterFadeText text="We never lost our passion for flying" />
+        </ScrollContainer>
+      </div>
     </div>
   );
 };

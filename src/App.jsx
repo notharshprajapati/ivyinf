@@ -1,39 +1,58 @@
-// App.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRouter from "./Components/AppRouter";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import Sus from "./Pages/HomePage/Middle/Sus";
-import HeroAnimation from "./Pages/HomePage/Middle/HeroAnimation";
-import SeqVid from "./Pages/HomePage/Middle/SeqVid";
-import Sequence from "./Pages/HomePage/Middle/Sequence";
 import Bruh from "./Components/Bruh";
+import Apple from "./Pages/HomePage/Middle/Apple";
 
 const App = () => {
-  return (
-    <div>
-      <Sequence />
-      {/* <Sus
-        width={1920}
-        height={1080}
-        numFrames={37}
-        location={"LinesVideo/LV"}
-        scrollHeight={2160}
-        format={"jpg"}
-      /> */}
-      {/* <Bruh /> */}
-    </div>
+  const [width, setWidth] = useState(window.innerWidth);
+  const isMobile = width <= 1080; // Adjust the breakpoint as needed
 
-    // <Router>
-    //   <div className="">
-    //     <Navbar />
-    //     <div className="bg-black text-white scroll-smooth">
-    //       <AppRouter />
-    //     </div>
-    //     <Footer />
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  return (
+    // <Bruh />
+    // <div className="relative h-[300vh] bg-neutral-900">
+    //   <div className="sticky top-0 bg-purple-600 flex h-screen items-center justify-center overflow-hidden">
+    //     <Apple
+    //       numFrames={24}
+    //       width={1080}
+    //       height={1080}
+    //       location={"build/build"}
+    //       format={"jpg"}
+    //     />
     //   </div>
-    // </Router>
+
+    <div>
+      {isMobile ? (
+        <div className="flex justify-center items-center h-screen">
+          <p className="text-black font-bold text-4xl">
+            Please open on desktop
+          </p>
+        </div>
+      ) : (
+        <Router>
+          <div className="">
+            <Navbar />
+            <div className="bg-black text-white scroll-smooth">
+              <AppRouter />
+            </div>
+            <Footer />
+          </div>
+        </Router>
+      )}
+    </div>
   );
 };
 

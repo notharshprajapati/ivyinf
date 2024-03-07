@@ -10,10 +10,7 @@ const TwoSkew = () => {
           loop
           className="w-300 h-auto object-cover transform  mr-[200px] skew-y-[8deg]"
         >
-          <source
-            src="https://dji-official-fe.djicdn.com/reactor/assets/_next/static/videos/3db3793d-f044-43bd-bb8a-f7f17428a256.webm"
-            type="video/webm"
-          />
+          <source src="./vid/ShivangVid/swamp2.mp4" type="video/mp4" />
         </video>
       </div>
 

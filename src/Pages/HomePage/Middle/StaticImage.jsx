@@ -5,7 +5,7 @@ const StaticImage = () => {
     <div className="flex h-screen w-full">
       <div className={`w-1/2 h-full order-2 flex items-center justify-center `}>
         <img
-          src="https://dji-official-fe.djicdn.com/dps/fab005b627b32d056534431f6bf6cc05.jpg"
+          src="./img/rotDrone.png"
           alt="Product"
           className={`w-100 h-auto object-cover transform -z-1 mr-80    `}
         />

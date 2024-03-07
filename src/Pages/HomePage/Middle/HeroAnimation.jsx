@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const HeroAnimation = () => {
+  const frames = 24;
   const [number, setNumber] = useState(0);
   const [src, setSrc] = useState("");
   const noRef = useRef(null);
 
   const currentFrame = (index) =>
-    `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index
-      .toString()
-      .padStart(4, "0")}.jpg`;
+    `./img/build/build${index.toString().padStart(4, "0")}.jpg`;
 
   const preloadImages = () => {
-    for (let i = 1; i < 148; i++) {
+    for (let i = 1; i < frames; i++) {
       const img = new Image();
       img.src = currentFrame(i);
     }
@@ -35,13 +34,9 @@ const HeroAnimation = () => {
         // Set the rotation state
         const num = Math.floor(newRotation) + 100;
         setNumber(num);
-        if (num > 0 && num < 148) {
+        if (num > 0 && num < frames) {
           console.log(num);
-          setSrc(
-            `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${num
-              .toString()
-              .padStart(4, "0")}.jpg`
-          );
+          setSrc(`./img/build/build${num.toString().padStart(4, "0")}.jpg`);
         }
       }
     };
@@ -64,7 +59,6 @@ const HeroAnimation = () => {
         <img src={src} className="w-3/8 h-auto " />
       </div>
       <div className=" h-screen"></div>
-      <div className="fixed bottom-0 z-50 text-white"> {number}</div>
     </div>
   );
 };

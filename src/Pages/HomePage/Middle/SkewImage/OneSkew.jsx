@@ -10,10 +10,7 @@ const OneSkew = () => {
           loop
           className="w-300 h-auto object-cover transform  -mr-[300px] -skew-y-[8deg]"
         >
-          <source
-            src="https://dji-official-fe.djicdn.com/reactor/assets/_next/static/videos/7da6f970-0934-46e1-ab3d-e0ca3211971f.webm"
-            type="video/webm"
-          />
+          <source src="./vid/ShivangVid/swamp1.mp4" type="video/mp4" />
         </video>
         <img
           src="https://store-guides2.djicdn.com/guides/wp-content/uploads/2017/10/Spark-with-remote-controller-feature-picture-696x340.jpg"
