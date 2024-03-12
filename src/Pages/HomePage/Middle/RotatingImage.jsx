@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const RotatingImage = ({ isImageLeft, text, imageSrc }) => {
+const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
   const [rotation, setRotation] = useState(0);
   const imgRef = useRef(null);
 
@@ -37,9 +37,9 @@ const RotatingImage = ({ isImageLeft, text, imageSrc }) => {
   }, []);
 
   return (
-    <div className="flex ">
+    <div className="flex py-10">
       <div
-        className={`w-1/2 h-full ${
+        className={`w-1/2 h-full  ${
           isImageLeft ? "order-1" : "order-2"
         } flex items-center justify-center `}
       >
@@ -48,7 +48,9 @@ const RotatingImage = ({ isImageLeft, text, imageSrc }) => {
           src={imageSrc}
           alt="Product"
           style={{
-            transform: `rotate(${isImageLeft ? rotation : -rotation}deg)`,
+            transform: `rotate(${
+              isImageLeft ? rotation : -rotation
+            }deg) scale(${scale})`,
           }}
           className={`w-100 h-auto object-cover transform -z-1   ${
             isImageLeft ? "-mr-80" : "mr-80"

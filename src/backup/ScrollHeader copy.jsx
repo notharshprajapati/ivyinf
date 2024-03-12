@@ -32,9 +32,7 @@ const ScrollHeader = () => {
   return (
     <div
       id="headerwrap"
-      className={`${
-        isScrolled ? " static" : "sticky top-0 "
-      } bg-black w-full h-screen`}
+      className={`${isScrolled ? " static" : "sticky top-0 "}  w-full h-screen`}
     >
       <img
         className="object-cover object-center w-full h-full ph-40"

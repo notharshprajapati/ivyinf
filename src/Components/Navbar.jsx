@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className=" bg-gray-300 px-4 fixed top-0 w-screen z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/">
-          <img className="h-16" src="./img/logo.png" alt="" />
+          <img className="h-16 p-1" src="./img/blackLogo.png" alt="" />
         </Link>
         <div className="hidden md:flex space-x-4 items-center">
           <Link to="/" className="text-black" onClick={closeMenu}>

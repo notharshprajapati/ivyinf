@@ -4,7 +4,6 @@ import AppRouter from "./Components/AppRouter";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Bruh from "./Components/Bruh";
-import Apple from "./Pages/HomePage/Middle/Apple";
 
 const App = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -23,18 +22,8 @@ const App = () => {
 
   return (
     // <Bruh />
-    // <div className="relative h-[300vh] bg-neutral-900">
-    //   <div className="sticky top-0 bg-purple-600 flex h-screen items-center justify-center overflow-hidden">
-    //     <Apple
-    //       numFrames={24}
-    //       width={1080}
-    //       height={1080}
-    //       location={"build/build"}
-    //       format={"jpg"}
-    //     />
-    //   </div>
 
-    <div>
+    <div className="font-body">
       {isMobile ? (
         <div className="flex justify-center items-center h-screen">
           <p className="text-black font-bold text-4xl">

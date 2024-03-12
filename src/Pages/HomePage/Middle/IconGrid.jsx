@@ -10,7 +10,7 @@ import {
 
 const IconBox = ({ icon, subheading }) => (
   <div className="py-4 flex flex-col items-start justify-center border-b-2 ">
-    <div className="flex items-center justify-center overflow-hidden pb-5 text-red-600">
+    <div className="flex items-center justify-center overflow-hidden pb-5 text-orange-600">
       {icon}
     </div>
     <div className="flex flex-col items-start pb-5">
@@ -20,7 +20,7 @@ const IconBox = ({ icon, subheading }) => (
 );
 
 const IconGrid = () => (
-  <div className="h-screen w-screen flex items-center justify-center ">
+  <div className="h-full w-screen my-40 flex items-center justify-center ">
     <div className="grid grid-cols-3 gap-4">
       <IconBox icon={<FaApple size={80} />} subheading=" iOS iOS iOS  " />
       <IconBox icon={<FaAndroid size={80} />} subheading="  Android Android " />

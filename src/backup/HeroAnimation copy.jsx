@@ -46,7 +46,7 @@ const HeroAnimation = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-black">
+    <div className="flex items-center justify-center w-full h-screen ">
       <canvas
         id="hero-lightpass"
         className="max-w-full max-h-full "

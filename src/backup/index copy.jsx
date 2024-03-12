@@ -53,14 +53,16 @@ const Index = () => (
       <CenterFadeText text="Fly through the sky in ways that seem impossible. We never lost our passion for flying, and with DJI FPV, those passions have turned imagination into reality." />
       <CenterFadeText text="With this immersive and intuitive aerial platform, get ready to go into the beyond" />
     </div>
-    <div className="bg-black relative z-10">
+    <div className=" relative z-10">
       <HeroAnimation />
       <IconGrid />
       <LoopText />
       <StaticImage />
       <div className="w-screen h-screen flex flex-col items-center justify-center">
         <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10">
-          <span className="text-red-700 font-bold">Next-Level Immersion.</span>{" "}
+          <span className="text-orange-700 font-bold">
+            Next-Level Immersion.
+          </span>{" "}
           Unparalleled Control.
         </h1>
         <p className="w-1/2 text-center text-xl mx-auto">

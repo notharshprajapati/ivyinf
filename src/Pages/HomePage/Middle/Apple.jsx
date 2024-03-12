@@ -1,10 +1,22 @@
 import React, { useRef, useEffect, useState } from "react";
 
-const Sus = ({ numFrames, width, height, location, format }) => {
+const Apple = ({
+  numFrames,
+  width,
+  height,
+  location,
+  format,
+  scrollHeight,
+  tweek = 0,
+  test = false,
+  scrollSpeed = 1,
+}) => {
   const canvasRef = useRef(null);
   const containerRef = useRef(null); // Added ref for the container
   const [images, setImages] = useState([]);
   const [frameIndex, setFrameIndex] = useState(0);
+  const [one, setOne] = useState(0);
+  const [two, setTwo] = useState(0);
 
   // Step 1: Load images
   function getCurrentFrame(index) {
@@ -22,17 +34,25 @@ const Sus = ({ numFrames, width, height, location, format }) => {
 
   // Step 2: Handle scroll events
   const handleScroll = () => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !canvasRef.current) return;
 
-    const scrollFraction =
-      window.scrollY / (containerRef.current.scrollHeight - window.innerHeight);
-    const index = Math.min(
-      numFrames - 1,
-      Math.ceil(scrollFraction * numFrames)
-    );
+    const containerTop = containerRef.current.getBoundingClientRect().top;
+    const containerHeight = containerRef.current.clientHeight;
+    const canvasHeight = canvasRef.current.height;
+    const scrollPosition = window.scrollY - containerTop - canvasHeight;
+    let index = Math.round(
+      (scrollPosition / containerHeight) * numFrames * scrollSpeed - tweek
+    ); // Modify this line
 
-    if (index <= 0 || index > numFrames) {
-      return;
+    setOne(scrollPosition);
+    setTwo(index);
+
+    if (isNaN(index) || index <= 0) {
+      index = 0;
+    }
+
+    if (index >= numFrames) {
+      index = numFrames - 1;
     }
 
     setFrameIndex(index);
@@ -60,6 +80,12 @@ const Sus = ({ numFrames, width, height, location, format }) => {
     let requestId;
 
     const render = () => {
+      context.clearRect(
+        0,
+        0,
+        canvasRef.current.width,
+        canvasRef.current.height
+      );
       context.drawImage(images[frameIndex], 0, 0);
       requestId = requestAnimationFrame(render);
     };
@@ -68,16 +94,18 @@ const Sus = ({ numFrames, width, height, location, format }) => {
 
     return () => cancelAnimationFrame(requestId);
   }, [frameIndex, images]);
-
   return (
-    <div ref={containerRef} style={{ height: "100vh" }}>
+    <div ref={containerRef} style={{ height: height }}>
       <canvas ref={canvasRef} />
-      <div className="z-10 text-white text-4xl font-bold relative">
-        <div className="fixed top-0">{frameIndex}</div>
-        <div className="h-screen">Bottom</div>
-      </div>
+      <div style={{ height: scrollHeight }}></div>
+      {test && (
+        <div className="text-white">
+          <div className="fixed top-20 z-50">{one}</div>
+          <div className="fixed bottom-0 z-50">{two}</div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Sus;
+export default Apple;

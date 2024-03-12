@@ -1,11 +1,12 @@
 import React from "react";
+import Apple from "./Middle/Apple";
 
 const Replacement = () => {
   return (
     <div className="">
       <div className="flex flex-col items-center justify-center">
         <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10 mt-20">
-          Easily <span className="text-red-700 font-bold">Replaceable </span>
+          Easily <span className="text-orange-700 font-bold">Replaceable </span>
           Parts
         </h1>
         <p className="w-1/2 text-center text-xl mx-auto">
@@ -19,10 +20,18 @@ const Replacement = () => {
         </p>
       </div>
       <div className="bg-black w-screen mt-20  ">
-        {/* <div className="flex items-center justify-center  ">
-          {number}
-          <img ref={noRef} src={src} className="w-auto h-[40rem]" />
-        </div> */}
+        <div className=" flex justify-center ">
+          <Apple
+            numFrames={24}
+            width={720}
+            height={720}
+            scrollHeight={1920}
+            location={"build/build"}
+            format={"jpg"}
+            tweek={250}
+            scrollSpeed={0.75}
+          />
+        </div>
       </div>
     </div>
   );

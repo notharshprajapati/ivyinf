@@ -2,7 +2,7 @@ import React from "react";
 
 const ThreeSkew = () => {
   return (
-    <div className="flex h-screen  w-full mb-20">
+    <div className="flex h-screen w-full mb-20 sticky top-0 bg-black">
       <div className="w-1/2 h-full order-1 flex items-center justify-center mt-20  -z-10">
         <video
           autoPlay
@@ -25,7 +25,7 @@ const ThreeSkew = () => {
         </div>
         <div>
           <p className="text-xl text-gray-500 ">0-100 kph</p>
-          <div className="flex w-5/12  text-red-700">
+          <div className="flex w-5/12  text-orange-700">
             <h2 className=" text-6xl ">2.0</h2>
             <p className="text-2xl ">s</p>
           </div>

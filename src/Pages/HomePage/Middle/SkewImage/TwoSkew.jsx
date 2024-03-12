@@ -2,7 +2,7 @@ import React from "react";
 
 const TwoSkew = () => {
   return (
-    <div className="flex h-screen w-full mb-20">
+    <div className="flex h-screen w-full mb-20 sticky top-0 bg-black">
       <div className="w-1/2 h-full order-2 flex items-center justify-center  -z-10">
         <video
           autoPlay

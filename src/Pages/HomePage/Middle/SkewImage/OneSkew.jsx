@@ -2,7 +2,7 @@ import React from "react";
 
 const OneSkew = () => {
   return (
-    <div className="flex h-screen w-full mb-20">
+    <div className="flex h-screen w-full mb-20 sticky top-0 bg-black">
       <div className="w-1/2 h-full order-1 flex items-center justify-center mt-[100px] -z-10">
         <video
           autoPlay
@@ -22,7 +22,7 @@ const OneSkew = () => {
         className={`w-1/2 h-full flex items-center justify-center  order-2 `}
       >
         <h2 className={`w-5/12 text-2xl text-justify mr-80   `}>
-          <span className="text-red-700 font-bold">
+          <span className="text-orange-700 font-bold">
             DJI FPV stands out in more ways than one.
           </span>
           Sporting front LEDs and aircraft arm lights with customizable-color,

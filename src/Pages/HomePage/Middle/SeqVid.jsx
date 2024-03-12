@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-const SeqVid = ({ numFrames, location }) => {
+const SeqVid = ({ numFrames, location, format = "jpg" }) => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const frameDuration = 1000 / 24;
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +39,7 @@ const SeqVid = ({ numFrames, location }) => {
         <img
           src={`./img/${location}${currentFrame
             .toString()
-            .padStart(4, "0")}.jpg`}
+            .padStart(4, "0")}.${format}`}
         />
       )}
     </div>

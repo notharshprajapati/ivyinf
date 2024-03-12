@@ -5,7 +5,7 @@ const FourText = ({ sentences, heightNumber }) => {
   return (
     <div className="text-6xl h-full font-bold   ">
       {sentences.map((sentence, index) => (
-        <Fade bottom>
+        <Fade bottom delay={index * 250}>
           <div
             key={index}
             className=" z-10 h-40 flex items-center justify-center "

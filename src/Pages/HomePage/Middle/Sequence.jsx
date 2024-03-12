@@ -93,8 +93,8 @@ const Sequence = () => {
           format={"jpg"}
         />
       </div>
-      <div className="relative z-20  ">
-        <div className="bg-black bg-opacity-90 ">
+      <div className="relative z-20 bg-black bg-opacity-90 ">
+        <div className=" ">
           <FourText
             className="relative z-10  "
             sentences={sentences}
@@ -105,6 +105,7 @@ const Sequence = () => {
             isImageLeft={false}
             text="Inf Drone"
             imageSrc="./img/rotDrone.png"
+            scale={1.5}
           />
           <RotatingImage
             isImageLeft={true}
@@ -115,12 +116,15 @@ const Sequence = () => {
             isImageLeft={false}
             text="Controller"
             imageSrc="./img/rotCont.png"
+            scale={1.25}
           />
           <RotatingImage
             isImageLeft={true}
             text="Frame"
             imageSrc="./img/rotFrame.png"
+            scale={1.25}
           />
+          <div className="w-full  h-10"></div>
         </div>
       </div>
 
@@ -129,7 +133,7 @@ const Sequence = () => {
         className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity2 }}
       >
-        <video autoPlay muted loop>
+        <video autoPlay muted>
           <source src="./vid/3rdvid.mp4" type="video/mp4" />
         </video>
       </div>
