@@ -117,7 +117,7 @@ const Sequence = () => {
           />
           <RotatingImage
             isImageLeft={true}
-            text="Googles"
+            text="Goggle"
             imageSrc="./img/rotGoggle.png"
           />
           <RotatingImage

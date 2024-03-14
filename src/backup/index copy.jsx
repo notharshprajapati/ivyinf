@@ -36,7 +36,7 @@ const Index = () => (
         />
         <RotatingImage
           isImageLeft={true}
-          text="googles"
+          text="Goggle"
           imageSrc="https://dji-official-fe.djicdn.com/dps/99916a8cbfe56d62e514bcb98206ed5f.jpg"
         />
         <RotatingImage
@@ -62,7 +62,7 @@ const Index = () => (
         <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10">
           <span className="text-orange-700 font-bold">
             Next-Level Immersion.
-          </span>{" "}
+          </span>
           Unparalleled Control.
         </h1>
         <p className="w-1/2 text-center text-xl mx-auto">

@@ -22,7 +22,7 @@ const index = () => {
           <LoopText
             title="FPV Has Never Looked This Good"
             text="Sleek and aerodynamic, the DJI FPV aircraft delivers powerful propulsion, battery life, and wind resistance, making this system as capable as it is visually stunning."
-            videoSrc="./vid/DroneRotate.mp4"
+            videoSrc="./vid/rotateVideo.mp4"
           />
           <StaticImage />
           <Replacement />
@@ -30,26 +30,30 @@ const index = () => {
           <Zoomout />
           <SkewImage />
           <LoopText
-            title="See it how its build"
+            title="See it how it is build"
             text="Sleek and aerodynamic, the DJI FPV aircraft delivers powerful propulsion, battery life, and wind resistance, making this system as capable as it is visually stunning."
-            videoSrc="./vid/DroneInside.mp4"
+            videoSrc="./vid/inParts.mp4"
           />
           {/* final */}
           <div className="mt-10">
             <div className="w-screen h-full flex flex-col items-center justify-center">
-              <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10">
-                <span className="text-orange-700 font-bold">
-                  Next-Level Immersion.
-                </span>
-                Unparalleled Control.
-              </h1>
-              <p className="w-1/2 text-center text-xl mx-auto">
-                Feel the thrill of immersive flight provided by the DJI Goggles
-                V2 and DJI FPV's super-wide 150° FOV. HD video transmission at
-                up to 120fps gives you an ultra-smooth, real-time view of your
-                flight. DJI FPV now supports DJI Goggles Integra and DJI Goggles
-                2.
-              </p>
+              <Fade bottom>
+                <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10">
+                  <span className="text-orange-700 font-bold">
+                    Next-Level Immersion.
+                  </span>
+                  Unparalleled Control.
+                </h1>
+              </Fade>
+              <Fade bottom delay={200}>
+                <p className="w-1/2 text-center text-xl mx-auto">
+                  Feel the thrill of immersive flight provided by the DJI
+                  Goggles V2 and DJI FPV's super-wide 150° FOV. HD video
+                  transmission at up to 120fps gives you an ultra-smooth,
+                  real-time view of your flight. DJI FPV now supports DJI
+                  Goggles Integra and DJI Goggles 2.
+                </p>
+              </Fade>
             </div>
             <div className="relative z-0 h-[280vh] w-screen ">
               <div className="sticky top-0">
@@ -72,16 +76,6 @@ const index = () => {
                     <video autoPlay muted loop className=" h-auto object-cover">
                       <source src="./vid/gameVideo.mp4" type="video/mp4" />
                     </video>
-                    <div className="absolute z-40">
-                      <Link
-                        to="https://drone-proto.vercel.app/"
-                        className="text-white"
-                      >
-                        <div className="bg-orange-500 font-bold text-5xl rounded-md py-4 px-8">
-                          Try Now
-                        </div>
-                      </Link>
-                    </div>
                   </div>
                   <div></div>
                 </div>

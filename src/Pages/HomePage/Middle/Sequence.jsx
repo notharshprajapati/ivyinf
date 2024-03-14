@@ -70,7 +70,7 @@ const Sequence = () => {
     <div className="text-white  ">
       <div
         ref={firstVideoRef}
-        className="z-10 sticky top-0 w-full h-screen text-6xl text-white bg-white"
+        className="z-10 sticky top-0 w-full h-screen text-6xl text-white "
       >
         <SeqVid numFrames={108} location={"Hero/Image"} />
         <div className="absolute top-0 left-0 w-full h-screen z-20 flex items-center justify-center">
@@ -109,7 +109,7 @@ const Sequence = () => {
           />
           <RotatingImage
             isImageLeft={true}
-            text="Googles"
+            text="Goggle"
             imageSrc="./img/rotGoggle.png"
           />
           <RotatingImage
