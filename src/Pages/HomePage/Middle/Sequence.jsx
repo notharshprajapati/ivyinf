@@ -1,6 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import SeqVid from "./SeqVid";
-import Sus from "./Sus";
 import Hero from "./Hero";
 import FourText from "./FourText";
 import RotatingImage from "./RotatingImage";
@@ -66,13 +64,53 @@ const Sequence = () => {
     };
   }, []); // Empty dependency array to run the effect only once on mount
 
+  const [rotation, setRotation] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (secondVideoRef.current) {
+        // Get the position of the image on the page
+        const imgRect = secondVideoRef.current.getBoundingClientRect();
+        const imgCenterY = imgRect.top + imgRect.height / 2;
+
+        // Get the middle of the page
+        const middleOfPage = window.innerHeight / 2;
+
+        // Calculate the rotation based on the position of the image on the page
+        const maxRotation = 10; // Maximum rotation in degrees
+        const distanceToMiddle = imgCenterY - middleOfPage;
+        const newRotation = (distanceToMiddle / middleOfPage) * maxRotation;
+
+        // Set the rotation state
+        setRotation(newRotation);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Trigger initial rotation on mount
+    handleScroll();
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="text-white  ">
+      <div className="fixed bottom-0 text-white z-50">{rotation}</div>
+
       <div
         ref={firstVideoRef}
         className="z-10 sticky top-0 w-full h-screen text-6xl text-white "
       >
-        <SeqVid numFrames={108} location={"Hero/Image"} />
+        <div className="h-screen w-full ">
+          <video autoPlay muted className="w-full h-full object-cover">
+            <source src="./vid/Hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+
         <div className="absolute top-0 left-0 w-full h-screen z-20 flex items-center justify-center">
           <Hero />
         </div>
@@ -83,15 +121,13 @@ const Sequence = () => {
         className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity1 }}
       >
-        {/* <SeqVid numFrames={37} location={"LinesVideo/LV"} /> */}
-        <Sus
-          width={1920}
-          height={1080}
-          numFrames={37}
-          location={"LinesVideo/LV"}
-          scrollHeight={2160}
-          format={"jpg"}
-        />
+        <div className="h-screen w-full ">
+          <img
+            className="w-full h-full object-cover"
+            src="/img/Hero.jpg"
+            // style={{ transform: `scale(${rotation})` }}
+          />
+        </div>
       </div>
       <div className="relative z-20 bg-black bg-opacity-90 ">
         <div className=" ">
@@ -133,9 +169,11 @@ const Sequence = () => {
         className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity2 }}
       >
-        <video autoPlay muted>
-          <source src="./vid/3rdvid.mp4" type="video/mp4" />
-        </video>
+        <div className="h-screen w-full ">
+          <video autoPlay muted loop className="w-full h-full object-cover">
+            <source src="./vid/3rdvid.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
       <div className="relative z-20 w-full text-4xl h-full">
         <ScrollContainer className="z-30 text-white ">

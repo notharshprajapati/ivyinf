@@ -37,6 +37,7 @@ const SeqVid = ({ numFrames, location, format = "jpg" }) => {
     <div ref={containerRef}>
       {isVisible && (
         <img
+          className="w-full h-full object-cover"
           src={`./img/${location}${currentFrame
             .toString()
             .padStart(4, "0")}.${format}`}
@@ -47,8 +48,5 @@ const SeqVid = ({ numFrames, location, format = "jpg" }) => {
 };
 
 export default SeqVid;
-
 {
-  /* <SeqVid numFrames={108} location={"Hero/Image"} />
-      <SeqVid numFrames={61} location={"CamZoom/CZ"} /> */
 }
