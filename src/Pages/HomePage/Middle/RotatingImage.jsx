@@ -37,10 +37,10 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
   }, []);
 
   return (
-    <div className="flex py-10">
+    <div className="flex flex-col sm:flex-row py-10">
       <div
-        className={`w-1/2 h-full  ${
-          isImageLeft ? "order-1" : "order-2"
+        className={`w-full sm:w-1/2 h-full ${
+          isImageLeft ? "sm:order-1" : "sm:order-2"
         } flex items-center justify-center `}
       >
         <img
@@ -52,21 +52,21 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
               isImageLeft ? rotation : -rotation
             }deg) scale(${scale})`,
           }}
-          className={`w-100 h-auto object-cover transform -z-1   ${
-            isImageLeft ? "-mr-80" : "mr-80"
-          }  `}
+          className={`w-100 h-auto object-cover transform -z-1 ${
+            isImageLeft ? "sm:-mr-80" : "sm:mr-80"
+          }`}
         />
       </div>
 
       <div
-        className={`w-1/2 h-100% flex items-center justify-center z-10  ${
-          !isImageLeft ? "order-1" : "order-2"
+        className={`w-full sm:w-1/2 h-100% flex items-center justify-center z-10 ${
+          !isImageLeft ? "sm:order-1" : "sm:order-2"
         }`}
       >
         <h2
-          className={`text-6xl font-bold text-center   ${
-            isImageLeft ? "mr-80" : "-mr-80"
-          }  `}
+          className={`text-6xl font-bold text-center my-10 ${
+            isImageLeft ? "sm:mr-80" : "sm:-mr-80"
+          }`}
         >
           {text}
         </h2>

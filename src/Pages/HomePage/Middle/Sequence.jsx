@@ -2,8 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Hero from "./Hero";
 import FourText from "./FourText";
 import RotatingImage from "./RotatingImage";
-import CenterFadeText from "./CenterFadeText";
-import { ScrollContainer } from "react-scroll-motion";
+import { Fade } from "react-reveal";
 
 const Sequence = () => {
   const sentences = [
@@ -17,6 +16,51 @@ const Sequence = () => {
   const thirdVideoRef = useRef(null);
   const [opacity1, setOpacity1] = useState(0);
   const [opacity2, setOpacity2] = useState(0);
+
+  //new
+  const divRef = useRef(null);
+  const [hookedYPosition, setHookedYPosition] = useState(0);
+  const [elementTop, setElementTop] = useState(0);
+  const [elementBottom, setElementBottom] = useState(0);
+  const [val, setVal] = useState(0);
+  const minValue = 1;
+  const maxValue = 0.75;
+
+  useEffect(() => {
+    if (divRef.current) {
+      const rect = divRef.current.getBoundingClientRect();
+      setElementTop(window.scrollY + rect.top);
+      setElementBottom(window.scrollY + rect.bottom);
+    }
+  }, [divRef]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY >= elementTop && currentScrollY <= elementBottom) {
+        setHookedYPosition(
+          (currentScrollY - elementTop) / (elementBottom - elementTop)
+        );
+      } else if (currentScrollY < elementTop) {
+        setHookedYPosition(0);
+      } else if (currentScrollY > elementBottom) {
+        setHookedYPosition(1);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      setHookedYPosition(0); // Reset the rotation when the component is unmounted
+    };
+  }, [elementTop, elementBottom]);
+
+  useEffect(() => {
+    setVal((maxValue - minValue) * hookedYPosition + minValue);
+  }, [hookedYPosition]);
+
+  // old
 
   useEffect(() => {
     const options = {
@@ -99,8 +143,6 @@ const Sequence = () => {
   }, []);
   return (
     <div className="text-white  ">
-      <div className="fixed bottom-0 text-white z-50">{rotation}</div>
-
       <div
         ref={firstVideoRef}
         className="z-10 sticky top-0 w-full h-screen text-6xl text-white "
@@ -121,11 +163,11 @@ const Sequence = () => {
         className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity1 }}
       >
-        <div className="h-screen w-full ">
+        <div ref={divRef} className="h-screen w-full bg-black">
           <img
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover "
             src="/img/Hero.jpg"
-            // style={{ transform: `scale(${rotation})` }}
+            style={{ transform: `scale(${val})` }}
           />
         </div>
       </div>
@@ -176,10 +218,16 @@ const Sequence = () => {
         </div>
       </div>
       <div className="relative z-20 w-full text-4xl h-full">
-        <ScrollContainer className="z-30 text-white ">
-          <CenterFadeText text="Fly through the sky in ways that seem impossible." />
-          <CenterFadeText text="We never lost our passion for flying" />
-        </ScrollContainer>
+        <div className="z-30 text-white  ">
+          <div className="h-screen w-screen relative flex items-center justify-center font-semibold text-center">
+            <Fade bottom>
+              Fly through the sky in ways that seem impossible.
+            </Fade>
+          </div>{" "}
+          <div className="h-screen w-screen relative flex items-center justify-center font-semibold text-center">
+            <Fade bottom>We never lost our passion for flying</Fade>
+          </div>
+        </div>
       </div>
     </div>
   );

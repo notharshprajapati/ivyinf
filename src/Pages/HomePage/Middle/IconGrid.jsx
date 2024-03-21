@@ -10,19 +10,21 @@ import {
 import { Fade } from "react-reveal";
 
 const IconBox = ({ icon, subheading }) => (
-  <div className="py-4 flex flex-col items-start justify-center border-b-2 ">
+  <div className="w-full px-2  sm:w-64 mt-10 flex flex-col items-center justify-center border-b-2 sm:border-b-0 border-transparent bg-gray-900 bg-opacity-10 rounded-lg p-4">
     <div className="flex items-center justify-center overflow-hidden pb-5 text-orange-600">
       {icon}
     </div>
-    <div className="flex flex-col items-start pb-5">
-      <h4 className="text-4xl font-semibold ">{subheading}</h4>
+    <div className="flex flex-col items-center pb-4">
+      <h4 className="text-xl sm:text-3xl   font-semibold text-center">
+        {subheading}
+      </h4>
     </div>
   </div>
 );
 
 const IconGrid = () => (
-  <div className="h-full w-screen my-40 flex items-center justify-center ">
-    <div className="grid grid-cols-3 gap-4">
+  <div className="h-full w-screen  flex items-center justify-center my-20">
+    <div className="grid grid-cols-2  md:grid-cols-3  gap-4">
       <Fade bottom delay={100}>
         <IconBox
           icon={<FaApple size={80} />}

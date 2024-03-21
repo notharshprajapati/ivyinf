@@ -1,16 +1,13 @@
 import React from "react";
-import CenterFadeText from "./Middle/CenterFadeText";
 import IconGrid from "./Middle/IconGrid";
 import LoopText from "./Middle/LoopText";
 import StaticImage from "./Middle/StaticImage";
-import HeroAnimation from "./Middle/HeroAnimation";
 import Zoomout from "./Zoomout";
 import Replacement from "./Replacement";
 import SkewImage from "./Middle/SkewImage";
 import Sequence from "./Middle/Sequence";
 import Apple from "./Middle/Apple";
 import { Fade } from "react-reveal";
-import { Link } from "react-router-dom";
 
 const index = () => {
   return (
@@ -26,7 +23,7 @@ const index = () => {
           />
           <StaticImage />
           <Replacement />
-          <div className=" h-[40rem] w-screen z-10"> </div>
+          <div className=" h-[40rem] w-screen z-10 "> </div>
           <Zoomout />
           <SkewImage />
           <LoopText
@@ -38,7 +35,7 @@ const index = () => {
           <div className="mt-10">
             <div className="w-screen h-full flex flex-col items-center justify-center">
               <Fade bottom>
-                <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10">
+                <h1 className="w-full md:w-5/12 text-3xl md:text-5xl text-center font-bold mx-auto mb-10">
                   <span className="text-orange-700 font-bold">
                     Next-Level Immersion.
                   </span>
@@ -46,7 +43,7 @@ const index = () => {
                 </h1>
               </Fade>
               <Fade bottom delay={200}>
-                <p className="w-1/2 text-center text-xl mx-auto">
+                <p className="w-full text-md md:w-1/2 text-center md:text-xl mx-auto">
                   Feel the thrill of immersive flight provided by the DJI
                   Goggles V2 and DJI FPV's super-wide 150° FOV. HD video
                   transmission at up to 120fps gives you an ultra-smooth,

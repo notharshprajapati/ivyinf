@@ -7,14 +7,14 @@ const Replacement = () => {
     <div className="">
       <div className="flex flex-col items-center justify-center">
         <Fade bottom>
-          <h1 className="w-5/12 text-5xl text-center font-bold mx-auto mb-10 mt-20">
+          <h1 className="w-full md:w-5/12 text-3xl md:text-5xl text-center font-bold mx-auto mb-10 mt-20">
             Easily{" "}
             <span className="text-orange-700 font-bold">Replaceable </span>
             Parts
           </h1>
         </Fade>
         <Fade bottom delay={200}>
-          <p className="w-1/2 text-center text-xl mx-auto">
+          <p className="w-full md:w-1/2 text-sm md:text-xl text-center  mx-auto">
             <span className="text-gray-500 ">
               The gimbal camera, landing gear, and top shell of the DJI FPV
               aircraft are all modular and easily replaceable, making repairs
@@ -35,6 +35,7 @@ const Replacement = () => {
             location={"build/build"}
             format={"jpg"}
             tweek={250}
+            // tweek={200}
             scrollSpeed={0.75}
           />
         </div>

@@ -34,7 +34,7 @@ const Zoomout = () => {
   }, []);
 
   return (
-    <div className="h-auto mt-40 relative z-0 flex items-center justify-center">
+    <div className="h-auto md:mt-40 relative z-0 flex items-center justify-center">
       <img
         ref={noRef}
         style={{ transform: `scale(${scale})` }}
@@ -44,7 +44,7 @@ const Zoomout = () => {
       />
       <div className="absolute">
         <Fade bottom>
-          <h1 className="text-4xl font-bold w-3/4  text-center mx-auto ">
+          <h1 className="text-xl md:text-4xl font-bold w-full md:w-3/4  text-center mx-auto ">
             Whether you are a seasoned FPV pilot or a complete beginner, DJI FPV
             offers three intuitive flight modes that let anyone fly confidently
             from day one.
