@@ -41,7 +41,7 @@ const CenterFadeText = ({ text }) => {
         style={{
           opacity: `${opacity}%`,
         }}
-        className=" w-1/2 font-semibold text-center"
+        className="w-full md:w-1/2 font-semibold text-center"
       >
         {text}
       </span>

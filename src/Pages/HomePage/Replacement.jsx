@@ -1,6 +1,7 @@
 import React from "react";
 import Apple from "./Middle/Apple";
 import { Fade } from "react-reveal";
+import AppleOrignal from "./Middle/AppleOrignal";
 
 const Replacement = () => {
   return (
@@ -27,15 +28,14 @@ const Replacement = () => {
       </div>
       <div className="bg-black w-screen mt-20  ">
         <div className=" flex justify-center ">
-          <Apple
+          <AppleOrignal
             numFrames={24}
-            width={720}
-            height={720}
+            size={720}
             scrollHeight={1920}
             location={"build/build"}
             format={"jpg"}
             tweek={250}
-            // tweek={200}
+            test={true}
             scrollSpeed={0.75}
           />
         </div>

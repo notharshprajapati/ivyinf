@@ -7,8 +7,11 @@ const index = () => {
   return (
     <div>
       <OneSkew />
+      <div className="h-screen"></div>
       <TwoSkew />
+      <div className="h-screen"></div>
       <ThreeSkew />
+      <div className="h-screen"></div>
     </div>
   );
 };

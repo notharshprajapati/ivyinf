@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 
 const FourText = ({ sentences }) => {
   return (
-    <div className="text-4xl sm:text-5xl md:text-6xl h-full font-bold">
+    <div className="text-3xl sm:text-5xl md:text-6xl h-full font-bold">
       {sentences.map((sentence, index) => (
         <Fade bottom delay={index * 250}>
           <div

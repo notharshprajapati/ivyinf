@@ -63,23 +63,18 @@ const index = () => {
                     height={1080}
                     location={"special/special"}
                     format={"png"}
-                    tweek={600}
+                    tweek={500}
                     scrollSpeed={0.25}
                   />
                 </div>
 
                 <div className="absolute inset-0 z-10 ">
-                  <div className="h-screen w-auto relative flex items-center justify-center">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      className=" w-full h-full object-cover"
-                    >
+                  <div className="h-auto relative flex items-center justify-center">
+                    <video autoPlay muted loop className=" h-auto object-cover">
                       <source src="./vid/gameVideo.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="h-screen"></div>
+                  <div></div>
                 </div>
               </div>
             </div>

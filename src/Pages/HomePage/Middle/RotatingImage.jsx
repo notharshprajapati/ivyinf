@@ -15,7 +15,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
         const middleOfPage = window.innerHeight / 2;
 
         // Calculate the rotation based on the position of the image on the page
-        const maxRotation = 10; // Maximum rotation in degrees
+        const maxRotation = 15; // Maximum rotation in degrees
         const distanceToMiddle = imgCenterY - middleOfPage;
         const newRotation = (distanceToMiddle / middleOfPage) * maxRotation;
 
@@ -37,7 +37,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row py-10">
+    <div className="flex flex-col sm:flex-row py-20">
       <div
         className={`w-full sm:w-1/2 h-full ${
           isImageLeft ? "sm:order-1" : "sm:order-2"
@@ -64,7 +64,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
         }`}
       >
         <h2
-          className={`text-6xl font-bold text-center my-10 ${
+          className={`text-6xl font-bold text-center my-20 ${
             isImageLeft ? "sm:mr-80" : "sm:-mr-80"
           }`}
         >

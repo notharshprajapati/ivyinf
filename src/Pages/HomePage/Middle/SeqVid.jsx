@@ -34,10 +34,10 @@ const SeqVid = ({ numFrames, location, format = "jpg" }) => {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div className="w-full h-full" ref={containerRef}>
       {isVisible && (
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover "
           src={`./img/${location}${currentFrame
             .toString()
             .padStart(4, "0")}.${format}`}

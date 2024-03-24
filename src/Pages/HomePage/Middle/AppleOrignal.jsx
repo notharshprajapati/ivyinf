@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-
-const Apple = ({
+const AppleOrignal = ({
   numFrames,
+  size,
   location,
   format,
   scrollHeight,
@@ -10,7 +10,7 @@ const Apple = ({
   scrollSpeed = 1,
 }) => {
   const canvasRef = useRef(null);
-  const containerRef = useRef(null);
+  const containerRef = useRef(null); // Added ref for the container
   const [images, setImages] = useState([]);
   const [frameIndex, setFrameIndex] = useState(0);
   const [one, setOne] = useState(0);
@@ -40,7 +40,7 @@ const Apple = ({
     const scrollPosition = window.scrollY - containerTop - canvasHeight;
     let index = Math.round(
       (scrollPosition / containerHeight) * numFrames * scrollSpeed - tweek
-    );
+    ); // Modify this line
 
     setOne(scrollPosition);
     setTwo(index);
@@ -59,8 +59,8 @@ const Apple = ({
   // Step 3: Set up canvas
   const renderCanvas = () => {
     const context = canvasRef.current.getContext("2d");
-    context.canvas.width = window.innerWidth;
-    context.canvas.height = window.innerHeight;
+    context.canvas.width = Math.min(window.innerWidth, size);
+    context.canvas.height = Math.min(window.innerWidth, size);
   };
 
   // Step 4: Render images to canvas
@@ -106,7 +106,7 @@ const Apple = ({
     return () => cancelAnimationFrame(requestId);
   }, [frameIndex, images]);
   return (
-    <div ref={containerRef} style={{ height: "100vh", width: "100vw" }}>
+    <div ref={containerRef} style={{ height: size }}>
       <canvas ref={canvasRef} />
       <div style={{ height: scrollHeight }}></div>
       {test && (
@@ -119,4 +119,4 @@ const Apple = ({
   );
 };
 
-export default Apple;
+export default AppleOrignal;
