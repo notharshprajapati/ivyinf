@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 
 const StaticImage = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full my-40 items-center justify-center">
+    <div className="flex flex-col md:flex-row w-full my-40 items-center justify-center overflow-hidden">
       <Fade right>
         <div className="w-full lg:w-1/2 h-full order-1 lg:order-2 flex items-center justify-center mb-4 lg:mb-0">
           <img
@@ -11,6 +11,7 @@ const StaticImage = () => {
             alt="Product"
             style={{
               transform: `scale(1.5)`,
+              maxWidth: "100vw",
             }}
             className="w-full lg:w-100 h-auto object-cover transform -z-1 lg:mr-80 md:mr-20 "
           />

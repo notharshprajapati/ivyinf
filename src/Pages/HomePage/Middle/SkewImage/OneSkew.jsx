@@ -14,7 +14,6 @@ const OneSkew = () => {
           >
             <source src="./vid/ShivangVid/swamp1.mp4" type="video/mp4" />
           </video>
-          2
         </div>
       </Fade>
       <Fade right>

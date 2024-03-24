@@ -37,7 +37,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row py-20">
+    <div className="flex flex-col sm:flex-row py-20 overflow-hidden">
       <div
         className={`w-full sm:w-1/2 h-full ${
           isImageLeft ? "sm:order-1" : "sm:order-2"
@@ -48,9 +48,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
           src={imageSrc}
           alt="Product"
           style={{
-            transform: `rotate(${
-              isImageLeft ? rotation : -rotation
-            }deg) scale(${scale})`,
+            transform: `rotate(${isImageLeft ? rotation : -rotation}deg) `,
           }}
           className={`w-100 h-auto object-cover transform -z-1 ${
             isImageLeft ? "sm:-mr-80" : "sm:mr-80"

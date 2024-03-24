@@ -14,7 +14,6 @@ const ThreeSkew = () => {
           >
             <source src="./vid/ShivangVid/swamp3.mp4" type="video/mp4" />
           </video>
-          2
         </div>
       </Fade>
       <Fade right>

@@ -35,7 +35,6 @@ const Replacement = () => {
             location={"build/build"}
             format={"jpg"}
             tweek={250}
-            test={true}
             scrollSpeed={0.75}
           />
         </div>

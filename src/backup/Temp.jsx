@@ -1,14 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import SeqVid from "./SeqVid";
-import Sus from "./Sus";
-import Hero from "./Hero";
-import FourText from "./FourText";
-import RotatingImage from "./RotatingImage";
-import CenterFadeText from "./CenterFadeText";
+import SeqVid from "../Pages/HomePage/Middle/SeqVid";
+import Hero from "../Pages/HomePage/Middle/Hero";
+import Apple from "../Pages/HomePage/Middle/Apple";
+import FourText from "../Pages/HomePage/Middle/FourText";
+import RotatingImage from "../Pages/HomePage/Middle/RotatingImage";
 import { ScrollContainer } from "react-scroll-motion";
-import Apple from "./Apple";
+import CenterFadeText from "../Pages/HomePage/Middle/CenterFadeText";
 
-const Sequence = () => {
+const Temp = () => {
   const sentences = [
     "Rip through the sky",
     "with complete control",
@@ -88,14 +87,16 @@ const Sequence = () => {
         className="z-10 sticky top-0  w-full h-screen text-6xl text-white  opacity-0 transition-opacity duration-500"
         style={{ opacity: opacity1 }}
       >
-        <Apple
-          className
-          numFrames={37}
-          location={"LinesVideo/LV"}
-          scrollHeight={2160}
-          scrollSpeed={0.25}
-          format={"jpg"}
-        />
+        <div className="bg-black">
+          <Apple
+            className
+            numFrames={37}
+            location={"LinesVideo/LV"}
+            scrollHeight={2160}
+            scrollSpeed={0.25}
+            format={"jpg"}
+          />
+        </div>
       </div>
       <div className="relative z-20 bg-black bg-opacity-75 ">
         <div className=" ">
@@ -109,7 +110,7 @@ const Sequence = () => {
             isImageLeft={false}
             text="Inf Drone"
             imageSrc="./img/rotDrone.png"
-            // scale={0.1}
+            scale={1.5}
           />
           <RotatingImage
             isImageLeft={true}
@@ -120,13 +121,13 @@ const Sequence = () => {
             isImageLeft={false}
             text="Controller"
             imageSrc="./img/rotCont.png"
-            // scale={1.25}
+            scale={1.25}
           />
           <RotatingImage
             isImageLeft={true}
             text="Frame"
             imageSrc="./img/rotFrame.png"
-            // scale={1.25}
+            scale={1.25}
           />
           <div className="w-full  h-10"></div>
         </div>
@@ -151,4 +152,4 @@ const Sequence = () => {
   );
 };
 
-export default Sequence;
+export default Temp;

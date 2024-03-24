@@ -26,7 +26,6 @@ const TwoSkew = () => {
           >
             <source src="./vid/ShivangVid/swamp2.mp4" type="video/mp4" />
           </video>
-          2
         </div>
       </Fade>
     </div>

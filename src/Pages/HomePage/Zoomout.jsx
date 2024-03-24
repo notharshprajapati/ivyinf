@@ -34,10 +34,10 @@ const Zoomout = () => {
   }, []);
 
   return (
-    <div className="h-auto md:mt-40 relative z-0 flex items-center justify-center">
+    <div className="h-auto md:mt-40 relative z-0 flex items-center justify-center overflow-hidden">
       <img
         ref={noRef}
-        style={{ transform: `scale(${scale})` }}
+        style={{ transform: `scale(${scale})`, maxWidth: "100vw" }}
         className="-z-10"
         src="./img/nature.png"
         alt=""
