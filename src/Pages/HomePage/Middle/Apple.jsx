@@ -63,12 +63,21 @@ const Apple = ({
     context.canvas.height = window.innerHeight;
   };
 
+  // Add this function
+  const handleResize = () => {
+    renderCanvas();
+  };
+
   // Step 4: Render images to canvas
   useEffect(() => {
     preloadImages();
     renderCanvas();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize); // Add this line
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize); // Add this line
+    };
   }, []);
 
   useEffect(() => {

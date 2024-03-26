@@ -51,7 +51,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
             transform: `rotate(${isImageLeft ? rotation : -rotation}deg) `,
           }}
           className={`w-100 h-auto object-cover transform -z-1 ${
-            isImageLeft ? "sm:-mr-80" : "sm:mr-80"
+            isImageLeft ? "md:-mr-40 lg:-mr-80" : "md:mr-40 lg:mr-80"
           }`}
         />
       </div>
@@ -63,7 +63,7 @@ const RotatingImage = ({ isImageLeft, text, imageSrc, scale = 1 }) => {
       >
         <h2
           className={`text-6xl font-bold text-center my-20 ${
-            isImageLeft ? "sm:mr-80" : "sm:-mr-80"
+            isImageLeft ? "md:mr-40 lg:mr-80" : "md:-mr-40 lg:-mr-80"
           }`}
         >
           {text}

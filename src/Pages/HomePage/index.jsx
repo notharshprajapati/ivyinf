@@ -16,31 +16,47 @@ const index = () => {
       <div className="relative">
         <div className="bg-black relative z-10">
           <IconGrid />
-          <LoopText
-            title="FPV Has Never Looked This Good"
-            text="Sleek and aerodynamic, the DJI FPV aircraft delivers powerful propulsion, battery life, and wind resistance, making this system as capable as it is visually stunning."
-            videoSrc="./vid/rotateVideo.mp4"
-          />
-          <StaticImage />
-          <Replacement />
-          <div className=" h-[40rem] w-screen z-10 "> </div>
-          <Zoomout />
-          <SkewImage />
-          <LoopText
-            title="See it how it is build"
-            text="Sleek and aerodynamic, the DJI FPV aircraft delivers powerful propulsion, battery life, and wind resistance, making this system as capable as it is visually stunning."
-            videoSrc="./vid/inParts.mp4"
-          />
+          <div className="sticky top-0 bg-black">
+            <LoopText
+              title="FPV Has Never Looked This Good"
+              text="Sleek and aerodynamic, the DJI FPV aircraft delivers powerful propulsion, battery life, and wind resistance, making this system as capable as it is visually stunning."
+              videoSrc="./vid/rotateVideo.mp4"
+            />
+          </div>
+          <div className="h-40 "></div>
+          <div className="relative bg-black">
+            <StaticImage />
+          </div>
+          <div className="sticky top-0 bg-black">
+            <Replacement />
+          </div>
+          <div className="h-[80vh] lg:h-40 "></div>
+          <div className="sticky top-0 bg-black">
+            <Zoomout />
+          </div>
+          <div className="h-40 "></div>
+          <div className="relative bg-black">
+            <SkewImage />
+          </div>
+          <div className="sticky top-0 bg-black">
+            <LoopText
+              title="See it how it is build"
+              text="Sleek and aerodynamic, the DJI FPV aircraft delivers powerful propulsion, battery life, and wind resistance, making this system as capable as it is visually stunning."
+              videoSrc="./vid/inParts.mp4"
+            />
+          </div>
+          <div className="h-40 "></div>
           {/* final */}
-          <div className="mt-10">
+          <div className="relative h-40 bg-black"></div>
+          <div className="relative bg-black">
             <div className="w-screen h-full flex flex-col items-center justify-center">
               <Fade bottom>
-                <h1 className="w-full md:w-5/12 text-3xl md:text-5xl text-center font-bold mx-auto mb-10">
-                  <span className="text-orange-700 font-bold">
+                <div className=" w-full lg:w-5/12  text-3xl lg:text-5xl text-center font-bold mx-auto mb-10">
+                  <span className="w-full text-orange-700 font-bold">
                     Next-Level Immersion.
                   </span>
                   Unparalleled Control.
-                </h1>
+                </div>
               </Fade>
               <Fade bottom delay={200}>
                 <p className="w-full text-md md:w-1/2 text-center md:text-xl mx-auto">
@@ -52,7 +68,8 @@ const index = () => {
                 </p>
               </Fade>
             </div>
-            <div className="relative z-0 h-[280vh] w-screen ">
+            <div className="relative h-40 bg-black"></div>
+            <div className="relative z-0 h-[600vh] w-screen ">
               <div className="sticky top-0">
                 <div className="absolute inset-50 z-20 flex items-center justify-center text-4xl ">
                   <Apple

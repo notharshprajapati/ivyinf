@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 
 const LoopText = ({ title, text, videoSrc }) => {
   return (
-    <div className="flex flex-col h-screen items-center justify-center relative z-10  mt-20">
+    <div className="flex flex-col h-screen items-center justify-center relative z-10  ">
       <div className="text-center mx-auto ">
         <Fade top delay={0}>
           <h1 className="w-full md:w-5/12 text-4xl md:text-5xl font-bold mb-10 mx-auto">

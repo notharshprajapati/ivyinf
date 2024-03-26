@@ -106,7 +106,7 @@ const AppleOrignal = ({
     return () => cancelAnimationFrame(requestId);
   }, [frameIndex, images]);
   return (
-    <div ref={containerRef} style={{ height: size }}>
+    <div ref={containerRef} style={{ height: 720 }}>
       <canvas ref={canvasRef} />
       <div style={{ height: scrollHeight }}></div>
       {test && (

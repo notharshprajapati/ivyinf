@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 
 const OneSkew = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen w-full mb-20 sticky top-0 bg-black">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen w-full mb-20  ">
       <Fade left>
         <div className="w-full h-full  flex items-center justify-center z-10 ">
           <video

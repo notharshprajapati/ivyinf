@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 
 const TwoSkew = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen w-full mb-20 sticky top-0 bg-black">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen w-full mb-20  bg-black">
       <Fade left>
         <div className="w-full h-full flex items-center justify-center  ">
           <div className=" px-8 md:px-0 w-full md:w-9/12 lg:w-5/12 text-xl md:text-2xl text-justify">
